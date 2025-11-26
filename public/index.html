@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luckmuc's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="loading-screen">
+        <div id="loading-content">
+            <img id="loading-img" src="" alt="Loading...">
+            <p id="loading-text"></p>
+        </div>
+    </div>
+
+    <header>
+        <h1>Hiya, I'm Luckmuc!</h1>
+    </header>
+
+    <section id="about" class="content-box">
+        <h2>About Me</h2>
+        <p>I'm a 13 year old teenager (born 2012, maybe this website won't be up to date when you're viewing it) and I really like tech,<br> especially software.</p>
+        <p>You may have already seen me in the <a href="https://hackclub.slack.com" target="_blank">Hack Club Slack</a>, I'm <a href="https://hackclub.slack.com/team/U091H6KD6TG">@Luckmuc</a> there</p>
+        
+        <p>I participated in <a href="https://summer.hackclub.com" target="_blank">Summer of Making</a>, a really nice program and i got a Bambu Lab A1 mini there</p>
+        <img src="pictures/som_logo.png" alt="Summer of Making Logo">
+        
+        <p>Fitting to that, i joined the printing legion of Hackclub to help out others without a 3D printer</p>
+        <img src="pictures/bambulab_nobg.png" alt="Bambu Lab A1 mini picture">
+        
+        <p>You'll probably see me hangin around somewhere, yk if you see one of these pfps:</p>
+        <div class="pfp-container">
+            <img src="pictures/blueprint-pfp.png" alt="PfP from Blueprint">
+            <img src="pictures/normal-pfp.jpg" alt="My default PfP">
+            <img src="pictures/whatsapp-pfp.jpeg" alt="My WhatsApp PfP">
+        </div>
+    </section>
+
+    <section id="projects" class="content-box">
+        <h2>My Projects</h2>
+        <p>I don't really have many public projects, mostly because I'm really bad at coding or i just do it private (I'm a vibecoder, but surprise: This website isnt vibecoded, at least partially lol (backend is annoying))</p>
+        <p>But one of the few public projects I have is <a href="https://github.com/Luckmuc/Blockpanel" target="_blank">Blockpanel</a>, a Minecraft Server Manager working with Purpur (vibecoded)</p>
+        <img src="pictures/blockpanel-logo.png" alt="Blockpanel Logo">
+        <p>This website is also public and open source btw, I'm also participating in Blueprint, so there may will be some Repos from that but I'm not into hardware</p>
+    </section>
+
+    <section id="hobbies" class="content-box">
+        <h2>Hobbies & Games</h2>
+        <p>I'm into tech, software stuff and gaming so I spend a looot of time in front of my pc (we'll just don't talk about my screen time ok?)</p>
+        <p>Some of my favourite games are VALORANT and Minecraft, these are my two main games</p>
+        <div class="pfp-container">
+            <img src="pictures/Valorant-nobg.png" alt="Valorant Logo">
+            <img src="pictures/minecraft-logo.png" alt="Minecraft Logo">
+        </div>
+    </section>
+
+    <section id="contact" class="content-box">
+        <h2>Contact Me</h2>
+        <p>If you wanna contact me (i hope bc of good reasons), you can<a href="https://hackclub.slack.com/team/U091H6KD6TG" target="_blank"> just dm me on Slack</a></p>
+        <p>You can also find me on Discord but I'm barely active there (display name Luckmuc, username luckmuc)</p>
+        <p>Maybe write me an email but it will most likely end in my spam folder lol, it's valentin@dombret.de</p>
+    </section>
+
+    <section id="hackatime" class="content-box">
+        <h2>Hackatime Stats</h2>
+        <img src="https://github-readme-stats.hackclub.dev/api/wakatime?username=5416&api_domain=hackatime.hackclub.com&&custom_title=Hackatime+Stats&layout=compact&cache_seconds=0&langs_count=8&theme=dark" alt="Hackatime Stats">
+    </section>
+
+    <section id="clicker" class="content-box clicker-container">
+        <h2>Global Clicker</h2>
+        <p>Click! Nothing else lol (syncs with other devices so its forever)</p>
+        <div id="click-display">Loading...</div>
+        <button id="click-btn">Dont click me :3</button>
+    </section>
+
+    <section id="guestbook" class="content-box">
+        <h2>Guestbook (pls dont spam rahhh)</h2>
+        <form id="guestbook-form">
+            <input type="text" id="guestbook-name" placeholder="Your beatiful Name" required>
+            <textarea id="guestbook-message" placeholder="Your very important message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <br>
+        <a href="guestbook.html" class="highlight-link">View all Guestbook Entries</a>
+        <div id="guestbook-entries">
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

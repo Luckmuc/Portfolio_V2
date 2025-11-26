@@ -1,0 +1,261 @@
+:root {
+    --bg-color: #050505;
+    --accent-green: #00ff9d;
+    --accent-blue: #00d4ff;
+    --text-color: #ffffff;
+    /* Pfad korrigiert: 'public' entfernt, da dies das Root-Verzeichnis des Servers ist */
+    --background-image-url: url('pictures/bg.png'); 
+    --guestbook-bg-url: url('pictures/bg-guestbook.png');
+}
+
+body {
+    background-color: var(--bg-color);
+    /* Moved gradient here so it doesn't overwrite the image */
+    background: linear-gradient(180deg, #050505 0%, #120a1f 100%);
+    
+    /* Image applied on top/after */
+    background-image: var(--background-image-url);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2rem; /* Increased font size */
+    margin: 0 auto;
+    padding: 40px 20px;
+    min-height: 100vh;
+    max-width: 60vw;
+    text-align: center;
+}
+
+/* Specific background for guestbook page */
+body.guestbook-page {
+    background-image: var(--guestbook-bg-url);
+}
+
+h1, h2 {
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, var(--accent-green), var(--accent-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.content-box {
+    background: rgba(20, 20, 25, 0.6);
+    border: 2px solid #333;
+    border-radius: 30px 5px 30px 5px; 
+    padding: 25px;
+    margin: 30px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-left: 5px solid var(--accent-green);
+    border-right: 5px solid var(--accent-blue);
+
+    /* Animation properties */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.content-box.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Image Styling inside Content Boxes --- */
+.content-box img {
+    max-width: 100%;
+    max-height: 150px; /* Begrenzt die Höhe, damit sie nicht den Screen sprengen */
+    width: auto;
+    display: block; /* Macht das Bild zum Block-Element */
+    margin: 20px auto; /* Zentriert das Bild horizontal */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Container für Profilbilder und Logos nebeneinander */
+.pfp-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.pfp-container img {
+    width: 100px; /* Feste Größe für PFPs */
+    height: 100px;
+    object-fit: cover; /* Schneidet das Bild zu, damit es nicht verzerrt */
+    border: 2px solid var(--accent-blue);
+    border-radius: 20px; /* Leicht abgerundet */
+    margin: 0; /* Margin wird vom Container (gap) gehandhabt */
+    transition: transform 0.3s;
+}
+
+.pfp-container img:hover {
+    transform: scale(1.1) rotate(5deg);
+    border-color: var(--accent-green);
+}
+
+.gallery-layout {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image-card {
+    background: rgba(255,255,255,0.05);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.image-card img {
+    max-width: 100%;
+    width: 200px;
+    border-radius: 15px;
+    border: 2px solid var(--accent-blue);
+}
+
+.image-card p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+#click-display {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--accent-green);
+    margin: 20px 0;
+    text-shadow: 0 0 10px var(--accent-green);
+}
+
+#click-btn {
+    background: linear-gradient(45deg, var(--accent-blue), var(--accent-green));
+    border: none;
+    color: black;
+    padding: 12px 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 0 15px var(--accent-blue);
+}
+
+#click-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px var(--accent-green);
+}
+
+#guestbook-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto 20px auto;
+}
+
+input, textarea {
+    background: #1a1a1a;
+    border: 1px solid #444;
+    border-radius: 10px;
+    color: white;
+    padding: 12px;
+    font-family: inherit;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-green);
+}
+
+button[type="submit"] {
+    background: var(--accent-green);
+    color: black;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--accent-green);
+    transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+    box-shadow: 0 0 20px var(--accent-green);
+}
+
+/* Link Styling */
+a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid var(--accent-green); /* Underline effect */
+    transition: color 0.3s, border-color 0.3s;
+}
+
+a:visited {
+    color: var(--accent-blue); /* Keep same color for visited links */
+}
+
+a:hover {
+    color: var(--accent-green);
+    border-color: var(--accent-blue);
+}
+
+.highlight-link {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 0 0 5px var(--accent-blue);
+    display: inline-block;
+    margin: 10px 0;
+}
+
+/* Loading Screen */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('pictures/loading_bg.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+}
+
+#loading-content {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 60px; /* Increased padding */
+    border-radius: 30px; /* Increased radius */
+    border: 3px solid var(--accent-green); /* Thicker border */
+    backdrop-filter: blur(10px);
+    min-width: 500px; /* Increased min-width */
+}
+
+#loading-img {
+    max-width: 250px; /* Increased size */
+    max-height: 250px; /* Increased size */
+    margin-bottom: 30px;
+    animation: float 2s infinite ease-in-out;
+}
+
+#loading-text {
+    font-size: 2.5rem; /* Increased font size */
+    font-weight: bold;
+    color: var(--accent-blue);
+    margin: 0;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
